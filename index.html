@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Silvhertek S.A.S. | Gestión de Activos Físicos y Mantenimiento Eléctrico</title>
+    <meta name="description" content="Soluciones integrales de mantenimiento predictivo, preventivo y correctivo a instalaciones eléctricas en Colombia.">
+    
+    <!-- Font Awesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Oscuro, Moderno y Responsivo -->
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --primary-dark: #b80710;
+            --bg-main: #0f172a;        /* Azul oscuro/antracita moderno */
+            --bg-card: #1e293b;        /* Color de tarjetas */
+            --bg-card-hover: #26354a;  /* Hover en tarjetas */
+            --text-main: #f8fafc;      /* Texto principal claro */
+            --text-muted: #94a3b8;     /* Texto secundario */
+            --border-color: #334155;   /* Bordes sutiles */
+            --transition: all 0.3s ease;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-main);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        .bg-card-section {
+            background-color: #162032;
+        }
+
+        /* Navbar & Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            gap: 10px;
+            max-width: 80%;
+            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+        }
+
+        .logo-box svg {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-title {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .logo-subtitle {
+            font-size: clamp(0.55rem, 1.5vw, 0.75rem);
+            color: #f0f0f0;
+            font-weight: 300;
+            text-transform: lowercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #ffffff !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.95)), url('./Fotos/foto-fondo.jpg') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-main);
+            padding: 120px 0 60px 0;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border-color);
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            color: var(--text-main);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* About Section */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .stat-card {
+            background-color: var(--bg-card);
+            padding: 25px 20px;
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-card h3 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary-color);
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Services Grid & Slider */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            background-color: var(--bg-card-hover);
+            border-color: rgba(229, 9, 20, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #1e293b;
+            position: relative;
+        }
+
+        /* Contenedor de Slider de Imágenes */
+        .slider-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .service-img::after {
+            content: 'SILVHERTEK S.A.S.';
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .service-card:hover .slider-container img {
+            filter: brightness(1.05);
+        }
+
+        .service-content {
+            padding: 22px;
+            flex-grow: 1;
+        }
+
+        .service-content .icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .service-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        /* Value Section */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 28px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: var(--transition);
+            background-color: var(--bg-card);
+        }
+
+        .value-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(229, 9, 20, 0.15);
+        }
+
+        .value-card i {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .value-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .info-item i {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            color: var(--text-main);
+        }
+
+        .info-item p {
+            color: var(--text-muted);
+        }
+
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links h4 {
+            margin-bottom: 12px;
+        }
+
+        .social-links-wrapper {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .contact-action {
+            background-color: var(--bg-card);
+            padding: 35px 25px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-action p {
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp-large {
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp-large:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #090d16;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 22px 0;
+            font-size: 0.85rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Adaptación Responsive Móvil */
+        @media (max-width: 900px) {
+            .grid-2, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--bg-main);
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .nav-menu ul li {
+                width: 100%;
+            }
+
+            .nav-menu ul li a {
+                display: block;
+                padding: 8px 0;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-whatsapp, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-box">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" stroke="#ffffff" stroke-width="6"/>
+                    <circle cx="50" cy="50" r="28" stroke="#ffffff" stroke-width="4"/>
+                    <circle cx="50" cy="20" r="9" fill="#888888" stroke="#ffffff" stroke-width="3"/>
+                    <circle cx="50" cy="80" r="9" fill="#888888" stroke="#ffffff" stroke-width="3"/>
+                    <circle cx="20" cy="50" r="9" fill="#888888" stroke="#ffffff" stroke-width="3"/>
+                    <circle cx="80" cy="50" r="9" fill="#888888" stroke="#ffffff" stroke-width="3"/>
+                </svg>
+                <div class="logo-text-group">
+                    <span class="logo-title">SILVHERTEK S.A.S</span>
+                    <span class="logo-subtitle">gestión de activos físicos</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#promesa">Promesa de Valor</a></li>
+                    <li><a href="#contacto" class="btn-primary">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Gestión Integral de Activos Físicos e Instalaciones Eléctricas</h1>
+            <p>Soluciones de mantenimiento predictivo, preventivo y correctivo a equipos e infraestructura técnica en Colombia.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/573118631531" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+                </a>
+                <a href="#servicios" class="btn-secondary">Nuestros Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="about section-padding">
+        <div class="container grid-2">
+            <div class="about-text">
+                <span class="subtitle">Sobre Silvhertek S.A.S.</span>
+                <h2>Experiencia y Soluciones Integrales Desde 2017</h2>
+                <p>Silvhertek S.A.S. es una empresa colombiana creada en el año 2017 con amplia experiencia brindando soluciones de mantenimiento predictivo, preventivo y correctivo a equipos e instalaciones eléctricas.</p>
+                <p>Nos enfocamos en la gestión integral del ciclo de vida útil de sus equipos, instalaciones e infraestructura técnica.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3>+7</h3>
+                    <p>Años de Experiencia</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Cumplimiento Normativo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services section-padding bg-card-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios Especializados</h2>
+                <p>Ingeniería y mantenimiento para garantizar la continuidad operativa de su empresa</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Servicio 1: Plantas Eléctricas -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-planta-electrica.jpeg" alt="Plantas o Generadores Eléctricos 1">
+                            <img src="./Fotos/foto-planta-electrica1.jpeg" alt="Plantas o Generadores Eléctricos 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-charging-station icon"></i>
+                        <h3>Plantas Eléctricas y Generadores</h3>
+                        <p>Mantenimiento preventivo, correctivo y diagnóstico a plantas diésel y generadores para garantizar el respaldo energético continuo de su empresa.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Transferencias Automáticas -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-transferencia-1.jpeg" alt="Transferencias Automáticas 1">
+                            <img src="./Fotos/foto-transferencia1.jpeg" alt="Transferencias Automáticas 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-random icon"></i>
+                        <h3>Transferencias Automáticas</h3>
+                        <p>Inspección, pruebas de conmutación y mantenimiento a sistemas de transferencia automática (ATS) para conmutación inmediata de energía.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Subestaciones Eléctricas -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-subestacion.jpeg" alt="Subestaciones Eléctricas 1">
+                            <img src="./Fotos/foto-subestacion1.jpeg" alt="Subestaciones Eléctricas 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-industry icon"></i>
+                        <h3>Subestaciones Eléctricas</h3>
+                        <p>Mantenimiento general, limpieza técnica y pruebas operativas a celdas de media y baja tensión e infraestructura de subestaciones.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Pruebas a Transformadores -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-transformador.jpg" alt="Pruebas a Transformadores 1">
+                            <img src="./Fotos/foto-transformador1.jpg" alt="Pruebas a Transformadores 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-bolt icon"></i>
+                        <h3>Pruebas a Transformadores</h3>
+                        <p>Evaluación técnica de aislamiento, pruebas dieléctricas y mantenimiento preventivo para prolongar la vida útil de sus transformadores.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Cortinas Mecanoeléctricas -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-cortina1.jpeg" alt="Cortinas Mecanoeléctricas 1">
+                            <img src="./Fotos/foto-cortina.jpeg" alt="Cortinas Mecanoeléctricas 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-warehouse icon"></i>
+                        <h3>Cortinas Mecanoeléctricas</h3>
+                        <p>Suministro, instalación, automatización y mantenimiento de cortinas mecanoeléctricas para locales, bodegas y accesos industriales.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 6: Termografías Infrarrojas -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-termografica.jpg" alt="Termografías Infrarrojas 1">
+                            <img src="./Fotos/foto-termografica1.jpg" alt="Termografías Infrarrojas 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-temperature-high icon"></i>
+                        <h3>Termografías Infrarrojas</h3>
+                        <p>Inspección termográfica para la detección oportuna de puntos calientes y prevención de fallas graves en instalaciones eléctricas.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 7: Tableros Eléctricos -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-tablero.jpeg" alt="Tableros Eléctricos 1">
+                            <img src="./Fotos/foto-tablero1.jpeg" alt="Tableros Eléctricos 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-cogs icon"></i>
+                        <h3>Tableros Eléctricos y Control</h3>
+                        <p>Mantenimiento, ensamble, adecuación y organización de tableros de distribución, protección y automatización eléctrica.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 8: Iluminación Industrial -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-iluminacion.jpeg" alt="Iluminación Industrial 1">
+                            <img src="./Fotos/foto-iluminacion1.jpeg" alt="Iluminación Industrial 2">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-lightbulb icon"></i>
+                        <h3>Iluminación Industrial</h3>
+                        <p>Mantenimiento e instalación de redes de iluminación LED para bodegas, áreas comerciales, zonas industriales y escenarios deportivos.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 9: Reparaciones Locativas drywall -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <div class="slider-container">
+                            <img src="./Fotos/foto-drywall.jpeg" alt="servicios de acabados arquitectónicos en drywall">
+                            <img src="./Fotos/foto-drywall1.jpeg" alt="servicios de acabados arquitectónicos en drywall 1">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-lightbulb icon"></i>
+                        <h3>Instalación y Mantenimiento de Sistemas de Construcción en Seco</h3>
+                        <p>Diseño y montaje de muros divisorios, cielorrasos, mantenimiento y reparación de humedades, resanes, cambios de placas dañadas y refuerzos estructurales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promesa de Valor -->
+    <section id="promesa" class="value section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Promesa de Valor</h2>
+                <p>Garantía de cumplimiento y calidad profesional</p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Cumplimiento</h3>
+                    <p>Nos comprometemos estrictamente con lo que ofrecemos.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Experiencia e Idoneidad</h3>
+                    <p>Trabajamos con altos estándares de calidad para grandes, medianas y pequeñas empresas del país.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Cumplimiento SG-SST</h3>
+                    <p>Contamos con el plan de Seguridad y Salud en el Trabajo (SG-SST).</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Normativas Ambientales</h3>
+                    <p>Contamos con la documentación técnica y ambiental correspondiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact section-padding bg-card-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Póngase en Contacto</h2>
+                <p>Atención oportuna para sus proyectos de ingeniería y mantenimiento</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Dirección Principal</h4>
+                            <p>Carrera 22A # 2-118 Ventino<br>Jamundí, Valle del Cauca, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Teléfonos</h4>
+                            <p><a href="tel:+573008814748" style="color: inherit; text-decoration: none;">+57 300 881 4748</a> / <a href="tel:+573118631531" style="color: inherit; text-decoration: none;">+57 311 863 1531</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Correo Electrónico</h4>
+                            <p><a href="mailto:silvherteksas@gmail.com" style="color: inherit; text-decoration: none;">silvherteksas@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Redes Sociales Oficiales:</h4>
+                        <div class="social-links-wrapper">
+                            <a href="https://wa.me/573118631531" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="mailto:silvherteksas@gmail.com" title="Enviar Correo"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/silverteksas/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@silvhertek_sas" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-action">
+                    <h3>¿Requiere asesoría o una cotización?</h3>
+                    <p>Inicie una conversación directa vía WhatsApp con uno de nuestros especialistas técnicos.</p>
+                    <a href="https://wa.me/573118631531?text=Hola,%20quisiera%20recibir%20información%20sobre%20sus%20servicios%20de%20mantenimiento%20eléctrico." target="_blank" class="btn-whatsapp-large">
+                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Silvhertek S.A.S. - Gestión de Activos Físicos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Widget Flotante de WhatsApp -->
+    <a href="https://wa.me/573118631531" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts del Sitio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menú Hamburguesa Móvil
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Carrusel / Slider Automático de Imágenes (3 segundos por foto)
+            const sliders = document.querySelectorAll('.slider-container');
+
+            sliders.forEach(slider => {
+                const images = slider.querySelectorAll('img');
+                if (images.length > 1) {
+                    let currentIndex = 0;
+                    setInterval(() => {
+                        currentIndex = (currentIndex + 1) % images.length;
+                        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    }, 3000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
